@@ -1,0 +1,12 @@
+---
+title: All attributes
+---
+<h1 class="govuk-heading-l">{{ page.title }}</h1>
+
+<ul class="govuk-list govuk-list--bullet">
+  {% for attribute in site.attributes %}
+    <li>
+      <a href="{{ site.baseurl }}{{ attribute.url }}" class="govuk-link">{{ attribute.name }}</a>
+    </li>
+  {% endfor %}
+</ul>
