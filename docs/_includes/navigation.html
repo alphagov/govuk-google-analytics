@@ -1,0 +1,11 @@
+<nav>
+  <ul class="govuk-list">
+  {% for item in site.data.navigation %}
+    <li>
+      <a href="{{ site.baseurl }}{{ item.link }}" class="govuk-link {% if page.url == item.link %}govuk-!-font-weight-bold{% endif %}">
+        {{ item.name }}
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</nav>

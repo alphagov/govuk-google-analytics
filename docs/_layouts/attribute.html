@@ -1,0 +1,59 @@
+---
+title: Attribute
+layout: default
+---
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Attribute</span>
+  {{ page.name }}
+</h1>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ page.name }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Required
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ page.required }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ page.type }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Description
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ page.description }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Used by
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {% for event in site.events %}
+        {% for attribute in event.event_data_attributes %}
+          {% if attribute.name == page.name %}
+            <a href="{{ site.baseurl }}/{{ event.url }}" class="govuk-link">{{ event.name }}</a><br/>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </dd>
+  </div>
+</dl>
+
+{{ content }}

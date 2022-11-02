@@ -1,0 +1,6 @@
+- name: Home
+  link: /
+- name: Events
+  link: /events.html
+- name: Attributes
+  link: /attributes.html

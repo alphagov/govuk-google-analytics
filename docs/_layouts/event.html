@@ -1,0 +1,55 @@
+---
+title: Event
+layout: default
+---
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Event</span>
+  {{ page.name }}
+</h1>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Top level attributes</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Attribute</th>
+      <th scope="col" class="govuk-table__header">Value</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% for attribute in page.top_level_attributes %}
+      <tr class="govuk-table__row">
+        {% assign filtered_attributes = site.attributes | where: 'name', attribute.name %}
+        {% for item in filtered_attributes %}
+          <th scope="row" class="govuk-table__header"><a href="{{ site.baseurl }}{{ item.url }}" class="govuk-link">{{ item.name }}</a></th>
+          <td class="govuk-table__cell">{{ attribute.value }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Event data attributes</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Attribute</th>
+      <th scope="col" class="govuk-table__header">Value</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% for attribute in page.event_data_attributes %}
+      <tr class="govuk-table__row">
+        {% assign filtered_attributes = site.attributes | where: 'name', attribute.name %}
+        {% for item in filtered_attributes %}
+          <th scope="row" class="govuk-table__header"><a href="{{ site.baseurl }}{{ item.url }}" class="govuk-link">{{ item.name }}</a></th>
+          <td class="govuk-table__cell">{{ attribute.value }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{{ event.content | markdownify }}
+
+
+<p>Page: {{ page | inspect }}</p>
