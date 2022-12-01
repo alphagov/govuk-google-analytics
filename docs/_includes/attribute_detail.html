@@ -1,0 +1,12 @@
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ include.name }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {% if include.name == 'Redact' %}
+      <a href="{{ site.baseurl }}/pii.html" class="govuk-link">{{ include.value }}</a>
+    {% else %}
+      {{ include.value }}
+    {% endif %}
+  </dd>
+</div>
