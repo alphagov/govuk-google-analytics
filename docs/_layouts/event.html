@@ -7,46 +7,34 @@ layout: default
   {{ page.name }}
 </h1>
 
-<table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Top level attributes</caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Attribute</th>
-      <th scope="col" class="govuk-table__header">Value</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    {% for attribute in page.top_level_attributes %}
-      <tr class="govuk-table__row">
-        {% assign filtered_attributes = site.attributes | where: 'name', attribute.name %}
-        {% for item in filtered_attributes %}
-          <th scope="row" class="govuk-table__header"><a href="{{ site.baseurl }}{{ item.url }}" class="govuk-link">{{ item.name }}</a></th>
-          <td class="govuk-table__cell">{{ attribute.value }}</td>
-        {% endfor %}
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
+{% for event in page.events %}
+  <div class="event">
+    <h2 class="govuk-heading-m">{{ event.name }}</h2>
+    <p class="govuk-body">
+      {{ event.description }}
+    </p>
 
-<table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Event data attributes</caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Attribute</th>
-      <th scope="col" class="govuk-table__header">Value</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    {% for attribute in page.event_data_attributes %}
-      <tr class="govuk-table__row">
-        {% assign filtered_attributes = site.attributes | where: 'name', attribute.name %}
-        {% for item in filtered_attributes %}
-          <th scope="row" class="govuk-table__header"><a href="{{ site.baseurl }}{{ item.url }}" class="govuk-link">{{ item.name }}</a></th>
-          <td class="govuk-table__cell">{{ attribute.value }}</td>
-        {% endfor %}
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
+    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-0">&#123;</p>
+    <ul class="govuk-list indented-list">
+      {% for data in event.data %}
+        {% if data.value.first %}
+          <li>
+            <span class="govuk-!-font-weight-bold">{{ data.name }}: &#123;</span>
+              {% assign sortedItems = data.value | sort: "name" %}
+              <ul class="govuk-list indented-list">
+              {% for sub_data in sortedItems %}
+                {% include event_attribute.html data=sub_data %}
+              {% endfor %}
+              </ul>
+            <span class="govuk-!-font-weight-bold">&#125;</span>
+          </li>
+        {% else %}
+          {% include event_attribute.html data=data %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-0">&#125;</p>
+  </div>
+{% endfor %}
 
 {{ event.content | markdownify }}

@@ -1,5 +1,5 @@
 <nav>
-  <ul class="govuk-list">
+  <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
   {% for item in site.data.navigation %}
     <li>
       <a href="{{ site.baseurl }}{{ item.link }}" class="govuk-link {% if page.url == item.link %}govuk-!-font-weight-bold{% endif %}">

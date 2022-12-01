@@ -8,48 +8,33 @@ layout: default
 </h1>
 
 <dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Name
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ page.name }}
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Required
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ page.required }}
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Type
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ page.type }}
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Description
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ page.description }}
-    </dd>
-  </div>
+  {% include attribute_detail.html name='Name' value=page.name %}
+  {% include attribute_detail.html name='Description' value=page.description %}
+  {% include attribute_detail.html name='Value' value=page.value %}
+  {% include attribute_detail.html name='Example' value=page.example %}
+  {% include attribute_detail.html name='Required' value=page.required %}
+  {% include attribute_detail.html name='Type' value=page.type %}
+  {% include attribute_detail.html name='Redact' value=page.redact %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Used by
     </dt>
     <dd class="govuk-summary-list__value">
       {% for event in site.events %}
-        {% for attribute in event.event_data_attributes %}
-          {% if attribute.name == page.name %}
-            <a href="{{ site.baseurl }}/{{ event.url }}" class="govuk-link">{{ event.name }}</a><br/>
-          {% endif %}
+        {% for events in event.events %}
+          {% for attribute in events.data %}
+            {% if attribute.value.first %}
+              {% for sub_attribute in attribute.value %}
+                {% if sub_attribute.name == page.name %}
+                  <a href="{{ site.baseurl }}/{{ event.url }}" class="govuk-link">{{ event.name }}</a><br/>
+                {% endif %}
+              {% endfor %}
+            {% else %}
+              {% if attribute.name == page.name %}
+                <a href="{{ site.baseurl }}/{{ event.url }}" class="govuk-link">{{ event.name }}</a><br/>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
         {% endfor %}
       {% endfor %}
     </dd>

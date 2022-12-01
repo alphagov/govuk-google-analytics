@@ -4,20 +4,22 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="{{ site.baseurl }}/">Home</a>
     </li>
-    {% for crumb in crumbs offset: 1 %}
-      {% if forloop.last %}
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="{{ site.baseurl }}/{{ page.url }}">
-            {{ page.title }}
-          </a>
-        </li>
-      {% else %}
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="{{ site.baseurl }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">
-            {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
-          </a>
-        </li>
-      {% endif %}
-    {% endfor %}
+    {% unless page.name == "404.html" %}
+      {% for crumb in crumbs offset: 1 %}
+        {% if forloop.last %}
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="{{ site.baseurl }}/{{ page.url }}">
+              {{ page.title }}
+            </a>
+          </li>
+        {% else %}
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="{{ site.baseurl }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">
+              {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    {% endunless %}
   </ol>
 </div>

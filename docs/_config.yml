@@ -29,6 +29,10 @@ collections:
   events:
     output: true
 
+sass:
+    # sass_dir: _sass
+    style: compressed
+
 defaults:
   - scope:
       path: ""

@@ -1,0 +1,23 @@
+{% assign filtered_attributes = site.attributes | where: 'name', include.data.name %}
+<li>
+  <dl class="event-attributes">
+    {% if filtered_attributes.size > 0 %}
+      {% for item in filtered_attributes %}
+        <dt class="event-attributes__title">
+          <a href="{{ site.baseurl }}{{ item.url }}" class="govuk-link">{{ include.data.name }}</a>
+        </dt>
+        <dd class="event-attributes__data">
+          {% if include.data.value %}
+            {{ include.data.value }}
+          {% else %}
+            {{ item.value }}
+          {% endif %}
+        </dd>
+      {% endfor %}
+    {% else %}
+      <dt class="event-attributes__title">
+        {{ include.data.name }}
+      </dt>
+    {% endif %}
+  </dl>
+</li>
