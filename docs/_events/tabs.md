@@ -24,4 +24,5 @@ events:
         value: number of tabs in total
       - name: section
         value: granular section
+        alias: section_event_data
 ---

@@ -7,6 +7,9 @@ title: Attributes
   {% for attribute in site.attributes %}
     <li>
       <a href="{{ site.baseurl }}{{ attribute.url }}" class="govuk-link">{{ attribute.name }}</a>
+      {% if attribute.alias %}
+        ({{ attribute.alias }})
+      {% endif %}
     </li>
   {% endfor %}
 </ul>
