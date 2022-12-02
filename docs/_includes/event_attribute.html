@@ -1,4 +1,8 @@
-{% assign filtered_attributes = site.attributes | where: 'name', include.data.name %}
+{% if include.data.alias %}
+  {% assign filtered_attributes = site.attributes | where: 'alias', include.data.alias %}
+{% else %}
+  {% assign filtered_attributes = site.attributes | where: 'name', include.data.name %}
+{% endif %}
 <li>
   <dl class="event-attributes">
     {% if filtered_attributes.size > 0 %}

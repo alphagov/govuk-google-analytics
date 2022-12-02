@@ -18,6 +18,7 @@ events:
       - name: schema_name
       - name: content_id
       - name: section
+        alias: section_page_view
       - name: taxon_slug
       - name: taxon_slugs
       - name: taxon_id
