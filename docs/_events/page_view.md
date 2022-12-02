@@ -17,13 +17,12 @@ events:
       - name: rendering_app
       - name: schema_name
       - name: content_id
-      - name: section
-        alias: section_page_view
+      - name: browse_topic
       - name: taxon_slug
       - name: taxon_slugs
       - name: taxon_id
       - name: taxon_ids
-      - name: themes
+      - name: taxonomy_level1
       - name: language
       - name: history
       - name: withdrawn
@@ -35,4 +34,5 @@ events:
       - name: primary_publishing_organisation
       - name: organisations
       - name: world_locations
+      - name: dynamic
 ---

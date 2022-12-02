@@ -13,7 +13,7 @@ events:
       - name: type
         value: accordion
       - name: text
-        value: text of accordion heading
+        value: text of selected accordion
       - name: index
         value: index of the accordion section (starting from 1)
       - name: index_total

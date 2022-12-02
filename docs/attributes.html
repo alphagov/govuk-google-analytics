@@ -6,10 +6,12 @@ title: Attributes
 <ul class="govuk-list govuk-list--bullet">
   {% for attribute in site.attributes %}
     <li>
-      <a href="{{ site.baseurl }}{{ attribute.url }}" class="govuk-link">{{ attribute.name }}</a>
-      {% if attribute.alias %}
-        ({{ attribute.alias }})
-      {% endif %}
+      <a href="{{ site.baseurl }}{{ attribute.url }}" class="govuk-link">
+        {{ attribute.name }}
+        {% if attribute.alias %}
+          ({{ attribute.alias }})
+        {% endif %}
+      </a>
     </li>
   {% endfor %}
 </ul>
