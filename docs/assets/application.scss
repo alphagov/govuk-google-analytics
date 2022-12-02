@@ -11,12 +11,14 @@
 
 .event-attributes {
   margin: 0 0 10px 0;
+  display: table;
 }
 
 .event-attributes__title {
-  font-weight: bold;
+  display: table-cell;
+  padding-right: 10px;
 }
 
 .event-attributes__data {
-  margin: 0 0 5px 20px;
+  display: table-cell;
 }
