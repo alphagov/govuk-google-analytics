@@ -22,26 +22,26 @@ layout: default
       </p>
     {% endif %}
 
-    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-0">&#123;</p>
+    <p class="govuk-body govuk-!-margin-0">&#123;</p>
     <ul class="govuk-list indented-list">
       {% for data in event.data %}
         {% if data.value.first %}
           <li>
-            <span class="govuk-!-font-weight-bold">{{ data.name }}: &#123;</span>
+            {{ data.name }}: &#123;
               {% assign sortedItems = data.value | sort: "name" %}
               <ul class="govuk-list indented-list">
               {% for sub_data in sortedItems %}
                 {% include event_attribute.html data=sub_data %}
               {% endfor %}
               </ul>
-            <span class="govuk-!-font-weight-bold">&#125;</span>
+            &#125;
           </li>
         {% else %}
           {% include event_attribute.html data=data %}
         {% endif %}
       {% endfor %}
     </ul>
-    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-0">&#125;</p>
+    <p class="govuk-body govuk-!-margin-0">&#125;</p>
   </div>
 {% endfor %}
 
