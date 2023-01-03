@@ -13,6 +13,11 @@ layout: default
     <p class="govuk-body">
       {{ event.description }}
     </p>
+    {% if event.example_url %}
+      <p class="govuk-body">
+        <a href="{{ event.example_url }}" class="govuk-link">Example of {{ event.name }}</a>
+      </p>
+    {% endif %}
 
     <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-0">&#123;</p>
     <ul class="govuk-list indented-list">

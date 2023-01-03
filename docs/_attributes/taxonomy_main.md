@@ -1,5 +1,5 @@
 ---
-name: taxon_slug
+name: taxonomy_main
 description:
 value: content attribute of meta tag govuk:taxon_slug
 example: courts-sentencing-tribunals

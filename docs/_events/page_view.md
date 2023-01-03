@@ -18,10 +18,10 @@ events:
       - name: schema_name
       - name: content_id
       - name: browse_topic
-      - name: taxon_slug
-      - name: taxon_slugs
-      - name: taxon_id
-      - name: taxon_ids
+      - name: taxonomy_main
+      - name: taxonomy_all
+      - name: taxonomy_main_id
+      - name: taxonomy_all_ids
       - name: taxonomy_level1
       - name: language
       - name: history

@@ -3,6 +3,7 @@ name: accordion
 events:
   - name: Accordion section
     description: When a section of the accordion is opened or closed.
+    example_url: https://www.gov.uk/coronavirus
     data:
     - name: event
       value: event_data
