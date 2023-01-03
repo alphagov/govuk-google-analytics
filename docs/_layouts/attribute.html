@@ -26,12 +26,12 @@ layout: default
             {% if attribute.value.first %}
               {% for sub_attribute in attribute.value %}
                 {% if sub_attribute.name == page.name %}
-                  <a href="{{ site.baseurl }}/{{ event.url }}" class="govuk-link">{{ event.name }}</a><br/>
+                  <a href="{{ site.baseurl }}/{{ event.url }}" class="govuk-link">{{ event.name }}</a> ({{ events.name }})<br/>
                 {% endif %}
               {% endfor %}
             {% else %}
               {% if attribute.name == page.name %}
-                <a href="{{ site.baseurl }}/{{ event.url }}" class="govuk-link">{{ event.name }}</a><br/>
+                <a href="{{ site.baseurl }}/{{ event.url }}" class="govuk-link">{{ event.name }}</a> ({{ events.name }})<br/>
               {% endif %}
             {% endif %}
           {% endfor %}
