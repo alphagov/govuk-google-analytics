@@ -1,8 +1,8 @@
 <nav>
-  <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+  <ul class="app-subnav__section">
   {% for item in site.data.navigation %}
-    <li>
-      <a href="{{ site.baseurl }}{{ item.link }}" class="govuk-link {% if page.url == item.link %}govuk-!-font-weight-bold{% endif %}">
+    <li class="app-subnav__section-item {% if page.url == item.link %}app-subnav__section-item--current{% endif %}">
+      <a href="{{ site.baseurl }}{{ item.link }}" class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline">
         {{ item.name }}
       </a>
     </li>

@@ -1,24 +1,4 @@
 ---
 ---
 
-.indented-list {
-  margin: 0 0 0 20px;
-}
-
-.event {
-  margin: 0 0 30px 0;
-}
-
-.event-attributes {
-  margin: 0 0 10px 0;
-  display: table;
-}
-
-.event-attributes__title {
-  display: table-cell;
-  padding-right: 10px;
-}
-
-.event-attributes__data {
-  display: table-cell;
-}
+@import "application.scss";
