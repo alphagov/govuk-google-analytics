@@ -11,8 +11,8 @@ layout: default
 {% endif %}
 
 {% for event in page.events %}
-  <div class="event">
-    <h2 class="govuk-heading-m">{{ event.name }}</h2>
+  <div class="event">    
+    <h2 class="govuk-heading-m" id="{{ event.name | downcase | replace: ' ', '_' }}">{{ event.name }}</h2>
     <p class="govuk-body">
       {{ event.description }}
     </p>
