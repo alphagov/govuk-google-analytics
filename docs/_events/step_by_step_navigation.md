@@ -4,6 +4,7 @@ events:
   - name: Open/close step
     description:
     example_url: https://www.gov.uk/learn-to-drive-a-car
+    tracker: event_tracker
     data:
     - name: event
       value: event_data
@@ -20,6 +21,7 @@ events:
   - name: Show/hide all steps
     description:
     example_url: https://www.gov.uk/learn-to-drive-a-car
+    tracker: event_tracker
     data:
     - name: event
       value: event_data

@@ -5,6 +5,7 @@ events:
   - name: Related Navigation
     description: Clicks in the related navigation component
     example_url: https://www.gov.uk/government/statistics/national-curriculum-assessments-key-stage-2-2016-provisional
+    tracker: link_tracker
     data:
     - name: event
       value: event_data

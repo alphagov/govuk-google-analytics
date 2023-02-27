@@ -3,6 +3,7 @@ name: links
 events:
   - name: External links
     description: When a link is followed to a page outside of www.gov.uk.
+    tracker: specialist_link_tracker
     data:
     - name: event
       value: event_data
@@ -21,6 +22,7 @@ events:
       - name: url
   - name: Download links
     description: When a link is followed to an asset such as a PDF.
+    tracker: specialist_link_tracker
     data:
     - name: event
       value: event_data

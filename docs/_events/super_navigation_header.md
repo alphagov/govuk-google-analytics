@@ -3,6 +3,7 @@ name: super navigation header
 events:
   - name: Header menu bar buttons
     description:
+    tracker: event_tracker
     data:
     - name: event
       value: event_data
@@ -23,6 +24,7 @@ events:
         value: Menu/Search
   - name: GOV.UK logo
     description:
+    tracker: link_tracker
     data:
     - name: event
       value: event_data

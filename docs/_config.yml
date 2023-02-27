@@ -28,6 +28,8 @@ collections:
     output: true
   events:
     output: true
+  trackers:
+    output: true
 
 sass:
     sass_dir: _sass
@@ -46,9 +48,9 @@ defaults:
       layout: "event"
   - scope:
       path: ""
-      type: "posts"
+      type: "trackers"
     values:
-      layout: "post"
+      layout: "tracker"
   - scope:
       path: ""
     values:

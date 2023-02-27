@@ -4,6 +4,7 @@ events:
   - name: follow us
     description: Triggered when a 'follow us' social media link is used.
     example_url: https://www.gov.uk/government/organisations/department-for-digital-culture-media-sport
+    tracker: link_tracker
     data:
     - name: event
       value: event_data
@@ -25,6 +26,7 @@ events:
   - name: share this page
     description: Triggered when a 'share on' social media link is used.
     example_url: https://www.gov.uk/government/news/new-protections-for-children-and-free-speech-added-to-internet-laws
+    tracker: link_tracker
     data:
     - name: event
       value: event_data

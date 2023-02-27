@@ -4,6 +4,7 @@ events:
   - name: Tab interaction
     description: When a tab is selected.
     example_url: https://www.gov.uk/renew-driving-licence
+    tracker: event_tracker
     data:
     - name: event
       value: event_data

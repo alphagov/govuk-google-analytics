@@ -3,6 +3,7 @@ name: feedback
 events:
   - name: Is this page useful? Yes
     description:
+    tracker: event_tracker
     data:
     - name: event
       value: event_data
@@ -18,6 +19,7 @@ events:
         value: feedback
   - name: Is this page useful? No
     description:
+    tracker: event_tracker
     data:
     - name: event
       value: event_data
@@ -31,9 +33,9 @@ events:
         value: "No"
       - name: type
         value: feedback
-
   - name: Report a problem with this page
     description:
+    tracker: event_tracker
     data:
     - name: event
       value: event_data
@@ -49,6 +51,7 @@ events:
         value: feedback
   - name: Send me the survey
     description:
+    tracker: event_tracker
     data:
     - name: event
       value: event_data
@@ -64,6 +67,7 @@ events:
         value: feedback
   - name: Send
     description:
+    tracker: event_tracker
     data:
     - name: event
       value: event_data

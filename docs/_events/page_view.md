@@ -3,6 +3,7 @@ name: page view
 events:
   - name: Page view
     description: When a page loads.
+    tracker: page_view_tracker
     data:
     - name: event
       value: page_view
