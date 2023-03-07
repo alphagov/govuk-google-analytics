@@ -1,0 +1,12 @@
+---
+title: Trackers
+---
+<h1 class="govuk-heading-l">{{ page.title }}</h1>
+<p class="govuk-body">Trackers are distinct JavaScripts that collect GA4 data in specific ways. They work differently but produce and send data to GA4 in the same way.</p>
+<ul class="govuk-list govuk-list--bullet">
+  {% for tracker in site.trackers %}
+    <li>
+      <a href="{{ site.baseurl }}{{ tracker.url }}" class="govuk-link">{{ tracker.name }}</a>
+    </li>
+  {% endfor %}
+</ul>

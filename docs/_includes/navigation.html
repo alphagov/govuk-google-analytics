@@ -1,0 +1,11 @@
+<nav>
+  <ul class="app-subnav__section">
+  {% for item in site.data.navigation %}
+    <li class="app-subnav__section-item {% if page.url == item.link %}app-subnav__section-item--current{% endif %}">
+      <a href="{{ site.baseurl }}{{ item.link }}" class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline">
+        {{ item.name }}
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</nav>

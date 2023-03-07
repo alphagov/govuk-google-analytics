@@ -1,0 +1,32 @@
+{% if include.data.alias %}
+  {% assign filtered_attributes = site.attributes | where: 'alias', include.data.alias %}
+{% else %}
+  {% assign filtered_attributes = site.attributes | where: 'name', include.data.name %}
+{% endif %}
+<li>
+  <dl class="event-attributes">
+    {% if filtered_attributes.size > 0 %}
+      {% for item in filtered_attributes %}
+        <dt class="event-attributes__title">
+          <a href="{{ site.baseurl }}{{ item.url }}" class="govuk-link">{{ include.data.name }}</a>:
+        </dt>
+        <dd class="event-attributes__data">
+          {% if include.data.value %}
+            {{ include.data.value }}
+          {% else %}
+            {{ item.value }}
+          {% endif %}
+        </dd>
+      {% endfor %}
+    {% else %}
+      <dt class="event-attributes__title">
+        {{ include.data.name }}:
+      </dt>
+      {% if include.data.value %}
+        <dd class="event-attributes__data">
+          {{ include.data.value }}
+        </dd>
+      {% endif %}
+    {% endif %}
+  </dl>
+</li>

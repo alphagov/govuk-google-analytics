@@ -1,0 +1,39 @@
+---
+title: Tracker
+layout: default
+---
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Tracker</span>
+  {{ page.name }}
+</h1>
+{% if page.description %}
+  <p class="govuk-body">
+    {{ page.description }}
+  </p>
+{% endif %}
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    {% if page.link %}
+      <dt class="govuk-summary-list__key">
+        Technical documentation
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <a href="{{ page.link }}" class="govuk-link">{{ page.technical_name}}</a>
+      </dd>
+    {% endif %}
+  </div>	
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Used by
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {% for event in site.events %}
+        {% for events in event.events %}
+          {% if events.tracker == page.technical_name %}
+            <a href="{{ site.baseurl }}/{{ event.url }}#{{ events.name | downcase | replace: ' ', '_' }}" class="govuk-link">{{ event.name }}</a> ({{ events.name }})<br/>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}      
+    </dd>
+  </div>  
+</dl>

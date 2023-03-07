@@ -1,0 +1,49 @@
+---
+title: Event
+layout: default
+---
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Event</span>
+  {{ page.name }}
+</h1>
+{% if page.description %}
+  <p class="govuk-body">{{ page.description }}</p>
+{% endif %}
+
+{% for event in page.events %}
+  <div class="event">    
+    <h2 class="govuk-heading-m" id="{{ event.name | downcase | replace: ' ', '_' }}">{{ event.name }}</h2>
+    <p class="govuk-body">
+      {{ event.description }}
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      {% if event.example_url %}
+        <li>
+          <a href="{{ event.example_url }}" class="govuk-link">Example of {{ event.name }}</a>
+        </li>
+      {% endif %}
+      {% if event.tracker %}
+        {% for tracker in site.trackers %}
+          {% if tracker.technical_name == event.tracker %}
+            <li>
+              <a href="{{ site.baseurl }}{{ tracker.url }}" class="govuk-link">Tracked by {{ event.tracker }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      </ul>
+    <p class="govuk-body govuk-!-margin-0">&#123;</p>
+    <ul class="govuk-list indented-list">
+      {% for data in event.data %}
+        {% if data.value.first %}
+          {% include event_attribute_wrapper.html data=data %}
+        {% else %}
+          {% include event_attribute.html data=data %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <p class="govuk-body govuk-!-margin-0">&#125;</p>
+  </div>
+{% endfor %}
+
+{{ event.content | markdownify }}
