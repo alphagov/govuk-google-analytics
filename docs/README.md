@@ -2,6 +2,14 @@
 
 This site contains a record of the data structure implemented for Google Analytics 4 by GOV.UK.
 
+## Development
+
+To run the server locally:
+
+1. Run `bundle install` in this folder.
+2. Run `bundle exec jekyll serve` in this folder.
+3. Navigate to `http://127.0.0.1:4000/govuk-google-analytics/`
+
 ## Event data structure
 
 Events should have a data file in `_events` of the following structure. This is used to construct the information on the event detail page.
