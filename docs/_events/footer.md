@@ -1,5 +1,5 @@
 ---
-name: Footer
+name: footer
 events:
   - name: link clicks
     description: Triggered when a footer link is clicked, right clicked, shift clicked, control clicked, or windows key/command key clicked.

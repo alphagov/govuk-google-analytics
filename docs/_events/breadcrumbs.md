@@ -1,5 +1,5 @@
 ---
-name: Breadcrumbs
+name: breadcrumbs
 events:
   - name: link clicks
     description: Triggered when a breadcrumb link is clicked, right clicked, shift clicked, control clicked, or windows key/command key clicked.
@@ -17,7 +17,7 @@ events:
       - name: index
         value:
         - name: index_link
-        value: The position of the link within the breadcrumbs from left to right.
+          value: The position of the link within the breadcrumbs from left to right.
       - name: index_total
       - name: link_domain
       - name: link_path_parts

@@ -53,7 +53,9 @@ events:
         - name: index_section
           value: The section that this link is in. The section in this case refers to the step number.
         - name: index_link
-          value: The position of the link within its section.
+          value: The position of the link within this section.
+        - name: index_section_count
+          value: The total amount of links within this section.
       - name: index_total
       - name: link_domain
       - name: link_path_parts
