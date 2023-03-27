@@ -1,23 +1,23 @@
 <li>
-  {{ data.name }}: &#123;
+  <span class="highlight-json__key">{{ data.name }}</span>: <span>&#123;</span>
     {% assign sortedItems = data.value | sort: "name" %}
     <ul class="govuk-list indented-list">
     {% for sub_data in sortedItems %}
       {% if sub_data.value.first %}
         <li>
-          {{ sub_data.name }}: &#123;
+          <span class="highlight-json__key">{{ sub_data.name }}</span>: <span>&#123;</span>
             {% assign sortedItems = sub_data.value | sort: "name" %}
             <ul class="govuk-list indented-list">
             {% for sub_sub_data in sortedItems %}
               {% include event_attribute.html data=sub_sub_data %}
             {% endfor %}
             </ul>
-          &#125;
+          <span>&#125;</span>
         </li>
       {% else %}
         {% include event_attribute.html data=sub_data %}
       {% endif %}
     {% endfor %}
     </ul>
-  &#125;
+  <span>&#125;</span>
 </li>

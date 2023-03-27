@@ -10,20 +10,22 @@
         <dt class="event-attributes__title">
           <a href="{{ site.baseurl }}{{ item.url }}" class="govuk-link">{{ include.data.name }}</a>:
         </dt>
-        <dd class="event-attributes__data">
+        <dd class="event-attributes__data highlight-json__value">
           {% if include.data.value %}
             {{ include.data.value }}
-          {% else %}
+          {% elsif item.value %}
             {{ item.value }}
+          {% else %}
+            {{ item.type }}
           {% endif %}
         </dd>
       {% endfor %}
     {% else %}
-      <dt class="event-attributes__title">
+      <dt class="event-attributes__title highlight-json__key">
         {{ include.data.name }}:
       </dt>
       {% if include.data.value %}
-        <dd class="event-attributes__data">
+        <dd class="event-attributes__data highlight-json__value">
           {{ include.data.value }}
         </dd>
       {% endif %}

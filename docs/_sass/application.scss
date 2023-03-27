@@ -82,3 +82,17 @@ $govuk-assets-path: "/govuk-google-analytics/assets/";
   color: govuk-colour("dark-grey");
   @include govuk-font(19);
 }
+
+.highlight-json {
+  padding: govuk-spacing(2);
+  border: solid 1px $govuk-border-colour;
+  background: #FCFCFC;
+}
+
+.highlight-json__key {
+  color: govuk-colour("dark-blue");
+}
+
+.highlight-json__value {
+  color: #9E2715;
+}
