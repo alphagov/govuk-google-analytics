@@ -28,7 +28,7 @@ events:
       - name: text
         value: Menu/Search
   - name: link clicks
-    description: Triggered when the GOVUK logo, a header "menu" section link, or a link under the search component is clicked, right clicked, shift clicked, control clicked, or windows key/command key clicked. Note that this is currently implemented with three index values e.g. "1.1.1". This is noted in our technical debt documentation.
+    description: Triggered when the GOVUK logo, a header "menu" section link, or a link under the search component is clicked, right clicked, shift clicked, control clicked, or windows key/command key clicked.
     example_url: https://www.gov.uk/
     tracker: link_tracker
     data:
