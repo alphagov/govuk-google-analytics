@@ -4,5 +4,5 @@ description: Used to communicate relevant location information, such as the URL 
 example:
 required: no
 type: string
-redact: false
+redact: true
 ---

@@ -5,5 +5,5 @@ value:
 example: { 1: "/conditions/vaccinations/flu-influenza-vaccine/", 2: undefined, 3: undefined, 4: undefined, 5: undefined }
 required: yes
 type: string
-redact: false
+redact: true
 ---
