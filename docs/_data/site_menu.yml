@@ -1,0 +1,6 @@
+- name: Data
+  section: data
+  link: /pages/index_data.html
+- name: Documentation
+  section: documentation
+  link: /pages/index_docs.html

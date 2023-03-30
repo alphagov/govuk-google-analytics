@@ -1,3 +1,4 @@
+{% comment %}
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
@@ -23,3 +24,4 @@
     {% endunless %}
   </ol>
 </div>
+{% endcomment %}

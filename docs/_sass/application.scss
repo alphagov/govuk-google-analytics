@@ -1,5 +1,6 @@
 $govuk-assets-path: "/govuk-google-analytics/assets/";
 @import "govuk/all";
+@import "navigation";
 
 .indented-list {
   margin: 0 0 0 20px;
