@@ -1,5 +1,6 @@
 $govuk-assets-path: "/govuk-google-analytics/assets/";
 @import "govuk/all";
+@import "navigation";
 
 .indented-list {
   margin: 0 0 0 20px;
@@ -81,4 +82,18 @@ $govuk-assets-path: "/govuk-google-analytics/assets/";
   padding: govuk-spacing(2) govuk-spacing(3) govuk-spacing(2) 0;
   color: govuk-colour("dark-grey");
   @include govuk-font(19);
+}
+
+.highlight-json {
+  padding: govuk-spacing(2);
+  border: solid 1px $govuk-border-colour;
+  background: #FCFCFC;
+}
+
+.highlight-json__key {
+  color: govuk-colour("dark-blue");
+}
+
+.highlight-json__value {
+  color: #9E2715;
 }

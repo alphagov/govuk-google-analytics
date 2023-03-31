@@ -1,6 +1,7 @@
 ---
 title: Event
-layout: default
+layout: layout_data
+section: data
 ---
 <h1 class="govuk-heading-l">
   <span class="govuk-caption-l">Event</span>
@@ -32,17 +33,20 @@ layout: default
         {% endfor %}
       {% endif %}
       </ul>
-    <p class="govuk-body govuk-!-margin-0">&#123;</p>
-    <ul class="govuk-list indented-list">
-      {% for data in event.data %}
-        {% if data.value.first %}
-          {% include event_attribute_wrapper.html data=data %}
-        {% else %}
-          {% include event_attribute.html data=data %}
-        {% endif %}
-      {% endfor %}
-    </ul>
-    <p class="govuk-body govuk-!-margin-0">&#125;</p>
+    <h3 class="govuk-heading-s">Data sent to the dataLayer</h3>
+    <div class="highlight-json">
+      <p class="govuk-body govuk-!-margin-0">&#123;</p>
+      <ul class="govuk-list indented-list">
+        {% for data in event.data %}
+          {% if data.value.first %}
+            {% include event_attribute_wrapper.html data=data %}
+          {% else %}
+            {% include event_attribute.html data=data %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <p class="govuk-body govuk-!-margin-0">&#125;</p>
+    </div>
   </div>
 {% endfor %}
 
